@@ -24,32 +24,46 @@ body{
     flex-direction: column;
     align-items: center;
 }
-.circular-progress{
-    position: relative;
-    height: 250px;
-    width: 250px;
-    border-radius: 50%;
-    background: conic-gradient(#7d2ae8 3.6deg, #ededed 0deg);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.outerCircle{
+  height: 250px;
+  width: 250px;
+  border-radius: 50%;
+  border: 1px solid black;
+  padding:20px;
 }
-.circular-progress::before{
-    content: "";
-    position: absolute;
-    height: 210px;
-    width: 210px;
-    border-radius: 50%;
-    background-color: #fff;
+.innerCircle{
+  height: 210px;
+  width: 210px;
+  border-radius: 50%;
+  border: 1px solid black;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+}
+
+circle{
+fill: none;
+stroke: purple;
+stroke-width: 20px;
+stroke-dasharray: 1026;
+stroke-dashoffset: 1026;
+ animation: anim 1s linear backwards; 
+}
+
+svg{
+  position: absolute;
+  top:250;
+  left:250;
+}
+
+@keyframes anim{
+  100%{
+    stroke-dashoffset: 0;
+  }
 }
 .progress-value{
     position: relative;
-    font-size: 40px;
+    font-size: 100px;
     font-weight: 600;
     color: #7d2ae8;
 }
-.text{
-    font-size: 30px;
-    font-weight: 500;
-    color: #606060;
-} 
